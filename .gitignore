@@ -2,5 +2,3 @@
 *.lock
 .stack-work
 score.json
-
-.DS_Store

@@ -12,16 +12,16 @@
 
 module Set2a where
 
+import Mooc.Todo
+
 -- Some imports you'll need. Don't add other imports :)
 import Data.List
-import Mooc.Todo
 
 ------------------------------------------------------------------------------
 -- Ex 1: Define the constant years, that is a list of the values 1982,
 -- 2004 and 2020 in this order.
 
-years :: [Int]
-years = [1982, 2004, 2020]
+years = todo
 
 ------------------------------------------------------------------------------
 -- Ex 2: define the function takeFinal, which returns the n last
@@ -32,10 +32,7 @@ years = [1982, 2004, 2020]
 -- Hint! remember the take and drop functions.
 
 takeFinal :: Int -> [a] -> [a]
-takeFinal n xs =
-  if length xs < n
-    then xs
-    else drop (length xs - n) xs
+takeFinal n xs = todo
 
 ------------------------------------------------------------------------------
 -- Ex 3: Update an element at a certain index in a list. More
@@ -49,7 +46,7 @@ takeFinal n xs =
 --   updateAt 2 0 [4,5,6,7] ==>  [4,5,0,7]
 
 updateAt :: Int -> a -> [a] -> [a]
-updateAt i x xs = take i xs ++ [x] ++ drop (i + 1) xs
+updateAt i x xs = todo
 
 ------------------------------------------------------------------------------
 -- Ex 4: substring i j s should return the substring of s starting at
@@ -63,7 +60,7 @@ updateAt i x xs = take i xs ++ [x] ++ drop (i + 1) xs
 --   substring 0 4 "abcdefgh"  ==>  "abcd"
 
 substring :: Int -> Int -> String -> String
-substring i j s = drop i (take j s)
+substring i j s = todo
 
 ------------------------------------------------------------------------------
 -- Ex 5: check if a string is a palindrome. A palindrome is a string
@@ -78,7 +75,7 @@ substring i j s = drop i (take j s)
 --   isPalindrome "AB"       ==>  False
 
 isPalindrome :: String -> Bool
-isPalindrome str = reverse str == str
+isPalindrome str = todo
 
 ------------------------------------------------------------------------------
 -- Ex 6: implement the function palindromify that chops a character
@@ -92,9 +89,7 @@ isPalindrome str = reverse str == str
 --   palindromify "abracacabra" ==> "acaca"
 
 palindromify :: String -> String
-palindromify s
-  | s == reverse s = s
-  | otherwise = palindromify (tail (init s))
+palindromify s = todo
 
 ------------------------------------------------------------------------------
 -- Ex 7: implement safe integer division, that is, a function that
@@ -107,8 +102,7 @@ palindromify s
 --   safeDiv 4 0  ==> Nothing
 
 safeDiv :: Integer -> Integer -> Maybe Integer
-safeDiv x 0 = Nothing
-safeDiv x y = Just (x `div` y)
+safeDiv x y = todo
 
 ------------------------------------------------------------------------------
 -- Ex 8: implement a function greet that greets a person given a first
@@ -120,8 +114,7 @@ safeDiv x y = Just (x `div` y)
 --   greet "John" (Just "Smith")  ==> "Hello, John Smith!"
 
 greet :: String -> Maybe String -> String
-greet first Nothing = "Hello, " ++ first ++ "!"
-greet first (Just last) = "Hello, " ++ first ++ " " ++ last ++ "!"
+greet first last = todo
 
 ------------------------------------------------------------------------------
 -- Ex 9: safe list indexing. Define a function safeIndex so that
@@ -137,10 +130,7 @@ greet first (Just last) = "Hello, " ++ first ++ " " ++ last ++ "!"
 --   safeIndex ["a","b","c"] (-1)  ==> Nothing
 
 safeIndex :: [a] -> Int -> Maybe a
-safeIndex xs i
-  | i > length xs - 1 = Nothing
-  | i < 0 = Nothing
-  | otherwise = Just (xs !! i)
+safeIndex xs i = todo
 
 ------------------------------------------------------------------------------
 -- Ex 10: another variant of safe division. This time you should use
@@ -151,9 +141,7 @@ safeIndex xs i
 --   eitherDiv 4 0   ==> Left "4/0"
 
 eitherDiv :: Integer -> Integer -> Either String Integer
-eitherDiv x y = case y of
-  0 -> Left (show x ++ "/" ++ show y)
-  y -> Right (x `div` y)
+eitherDiv x y = todo
 
 ------------------------------------------------------------------------------
 -- Ex 11: implement the function addEithers, which combines two values of type
@@ -170,6 +158,4 @@ eitherDiv x y = case y of
 --   addEithers (Left "boom") (Left "fail") ==> Left "boom"
 
 addEithers :: Either String Int -> Either String Int -> Either String Int
-addEithers (Right a) (Right b) = Right (a + b)
-addEithers (Left a) _ = Left a
-addEithers _ (Left b) = Left b
+addEithers a b = todo
