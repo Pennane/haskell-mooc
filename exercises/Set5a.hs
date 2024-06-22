@@ -5,7 +5,6 @@
 module Set5a where
 
 import Mooc.Todo
-import Set4a (average)
 
 ------------------------------------------------------------------------------
 -- Ex 1: Define the type Vehicle that has four constructors: Bike,
